@@ -1,4 +1,5 @@
 menu = """
+############## MENU ##############
 [d] Deposito
 [s] Saque
 [e] Extrato
@@ -16,7 +17,7 @@ while True:
     opcao = input(menu)
     
     if opcao == "d":
-        valor = float(input("Informe o valor do deposito R$:"))
+        valor = float(input("Digite o valor do deposito R$:"))
 
         if valor > 0:
             saldo += valor
@@ -41,7 +42,7 @@ while True:
             print("Excedeu limite de saque por dia")
 
         elif excedeu_saques:
-            print("Excedeu o limite de saques diarios")
+            print("Excedeu o limite de 3 saques diarios")
     
         elif valor > 0:
             saldo -= valor
@@ -52,7 +53,7 @@ while True:
             print("Operação Falhou o valor infomrado é invalido")
     
     elif opcao == "e":
-        print("\n ########## - Extrato - ##########\n")
+        print("\nd########## - Extrato - ##########\n")
         print("Não foram realizadas movimentações." if not extrato else extrato)
         print(f"\nSeu saldo é de R$: {saldo:.2f}\n")
         print("##################################e")
